@@ -54,16 +54,22 @@ dependencies:
     version: 6.1.1
   rehype-pretty-code:
     specifier: ^0.9.4
-    version: 0.9.5(shiki@0.14.1)
+    version: 0.9.5(shiki@0.14.2)
   rehype-slug:
     specifier: ^5.1.0
     version: 5.1.0
   remark-gfm:
     specifier: ^3.0.1
     version: 3.0.1
+  shiki:
+    specifier: ^0.14.2
+    version: 0.14.2
   typescript:
     specifier: 5.0.2
     version: 5.0.2
+  upstash:
+    specifier: ^0.0.1
+    version: 0.0.1(@types/node@18.15.10)(@types/react@18.0.29)
 
 devDependencies:
   '@opentelemetry/api':
@@ -1036,6 +1042,41 @@ packages:
     resolution: {integrity: sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==}
     dev: false
 
+  /@raycast/api@1.50.5(@types/node@18.15.10)(@types/react@18.0.29):
+    resolution: {integrity: sha512-k8hNAryDteS0nb7lT55VFz5bM0NG+6IjVJ6bLxAVUax8MUiD5HU8jfHzs9qoo8Ilx3auCQqOoCZ4fsIAuYQaWw==}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@types/node': 18.8.3
+      '@types/react': 18.0.9
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      '@types/react':
+        optional: true
+    dependencies:
+      '@types/node': 18.15.10
+      '@types/react': 18.0.29
+      react: 18.1.0
+      react-reconciler: 0.28.0(react@18.1.0)
+    dev: false
+
+  /@raycast/utils@1.5.2(@raycast/api@1.50.5):
+    resolution: {integrity: sha512-poi+/HeLsTrSyA4NOaXAzLJJJl6oxPpRV9lSEBwSSR/Fa6bmtdxykmBtQpYqbSUgGlosrqzzgniaTU/LdwHh+A==}
+    peerDependencies:
+      '@raycast/api': '>=1.42.0'
+    dependencies:
+      '@raycast/api': 1.50.5(@types/node@18.15.10)(@types/react@18.0.29)
+      content-type: 1.0.5
+      cross-fetch: 3.1.5
+      dequal: 2.0.3
+      media-typer: 1.1.0
+      object-hash: 3.0.0
+      signal-exit: 3.0.7
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /@rometools/cli-darwin-arm64@11.0.0:
     resolution: {integrity: sha512-F3vkdY+s3FLIEnAjSbyHTuIPB88cLpccimW4ecid5I7S6GzGG3iUJI4xT00JhH73K4P/qW20/9r+kH1T9Du8Xg==}
     cpu: [arm64]
@@ -1445,6 +1486,11 @@ packages:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
     dev: true
 
+  /content-type@1.0.5:
+    resolution: {integrity: sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
   /contentlayer@0.3.2(esbuild@0.17.18)(markdown-wasm@1.2.0):
     resolution: {integrity: sha512-fQN3l/KvUW+nIvXiaShpOCvXX4alNbvfo56vnVxHVm6vKP10bb/IRhjMXPXZzr+5hmCaeep9wMpCAvOKB6NJHA==}
     engines: {node: '>=14.18'}
@@ -1466,6 +1512,14 @@ packages:
 
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+    dev: false
+
+  /cross-fetch@3.1.5:
+    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
+    dependencies:
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /cssesc@3.0.0:
@@ -2363,6 +2417,11 @@ packages:
       - supports-color
     dev: false
 
+  /media-typer@1.1.0:
+    resolution: {integrity: sha512-aisnrDP4GNe06UcKFnV5bfMNPBUw4jsLGaWwWfnH3v02GnBuXX2MCVn5RbrWo0j3pczUilYblq7fQ7Nw2t5XKw==}
+    engines: {node: '>= 0.8'}
+    dev: false
+
   /memfs@3.5.1:
     resolution: {integrity: sha512-UWbFJKvj5k+nETdteFndTpYxdeTMox/ULeqX5k/dpaQJCCFmj5EeKv3dBcyO2xmkRAx2vppRu5dVG7SOtsGOzA==}
     engines: {node: '>= 4.0.0'}
@@ -2829,6 +2888,18 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: false
 
+  /node-fetch@2.6.7:
+    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+    dev: false
+
   /node-fetch@2.6.9:
     resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
     engines: {node: 4.x || >=6.0.0}
@@ -2871,7 +2942,6 @@ packages:
   /object-hash@3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
-    dev: true
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -3099,12 +3169,30 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-reconciler@0.28.0(react@18.1.0):
+    resolution: {integrity: sha512-sGIHDOpgVjRYgsi8NgosDnbkDvvkYFFSF900ZUhUw0+lSBEA5n76TcKFaVkfYMIuYm+7W6mT8Q673DLBfuTxcQ==}
+    engines: {node: '>=0.10.0'}
+    peerDependencies:
+      react: ^18.1.0
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.1.0
+      scheduler: 0.22.0
+    dev: false
+
   /react-wrap-balancer@0.4.0(react@18.2.0):
     resolution: {integrity: sha512-MUsROihHd7bFHCo9kCOifKDYBEZPgKTyGvfa8RcwRQKtT2cL7Um9Cc8A7GvuT8t3np7LAGsEkzdEyJdKrr5lVQ==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /react@18.1.0:
+    resolution: {integrity: sha512-4oL8ivCz5ZEPyclFQXaNksK3adutVS8l2xzZU0cqEFrE9Sb7fC0EFK5uEk74wIreL1DERyjvsU915j1pcT2uEQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
     dev: false
 
   /react@18.2.0:
@@ -3142,7 +3230,7 @@ packages:
       unist-util-visit: 4.1.2
     dev: false
 
-  /rehype-pretty-code@0.9.5(shiki@0.14.1):
+  /rehype-pretty-code@0.9.5(shiki@0.14.2):
     resolution: {integrity: sha512-TYA4oDxxn4z/YZ6ZNz7BX5BuyeJzi7D6XxI44T/eqUOBYypwwOd7RZ+IBb1NkERpian/k7sZ1+KsdIbWDRenQw==}
     engines: {node: ^12.16.0 || >=13.2.0}
     peerDependencies:
@@ -3150,7 +3238,7 @@ packages:
     dependencies:
       hash-obj: 4.0.0
       parse-numeric-range: 1.3.0
-      shiki: 0.14.1
+      shiki: 0.14.2
     dev: false
 
   /rehype-slug@5.1.0:
@@ -3279,6 +3367,12 @@ packages:
       mri: 1.2.0
     dev: false
 
+  /scheduler@0.22.0:
+    resolution: {integrity: sha512-6QAm1BgQI88NPYymgGQLCZgvep4FyePDWFpXVK+zNSUgHwlqpJy8VEh8Et0KxTACS4VWwMousBElAZOH9nkkoQ==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
@@ -3301,13 +3395,17 @@ packages:
       lru-cache: 6.0.0
     dev: false
 
-  /shiki@0.14.1:
-    resolution: {integrity: sha512-+Jz4nBkCBe0mEDqo1eKRcCdjRtrCjozmcbTUjbPTX7OOJfEbTZzlUWlZtGe3Gb5oV1/jnojhG//YZc3rs9zSEw==}
+  /shiki@0.14.2:
+    resolution: {integrity: sha512-ltSZlSLOuSY0M0Y75KA+ieRaZ0Trf5Wl3gutE7jzLuIcWxLp5i/uEnLoQWNvgKXQ5OMpGkJnVMRLAuzjc0LJ2A==}
     dependencies:
       ansi-sequence-parser: 1.1.0
       jsonc-parser: 3.2.0
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
+    dev: false
+
+  /signal-exit@3.0.7:
+    resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: false
 
   /sort-keys@5.0.0:
@@ -3594,6 +3692,18 @@ packages:
       escalade: 3.1.1
       picocolors: 1.0.0
     dev: true
+
+  /upstash@0.0.1(@types/node@18.15.10)(@types/react@18.0.29):
+    resolution: {integrity: sha512-Q1wtANEThpMYbarmKfK+rIX76tZz69u+796QyYnt5ISB2+bZstpWoZ/tVu0FAL1Xsy5JkcuPk8EisypA7xAo0A==}
+    dependencies:
+      '@raycast/api': 1.50.5(@types/node@18.15.10)(@types/react@18.0.29)
+      '@raycast/utils': 1.5.2(@raycast/api@1.50.5)
+      node-fetch: 3.3.1
+    transitivePeerDependencies:
+      - '@types/node'
+      - '@types/react'
+      - encoding
+    dev: false
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
