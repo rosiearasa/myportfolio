@@ -38,4 +38,5 @@ next-env.d.ts
 .contentlayer
 .env
 ads.txt
+._.env
 
